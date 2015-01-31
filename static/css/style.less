@@ -1,0 +1,88 @@
+@import "bootstrap";
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+.landing {
+    background: url('../img/background.png');
+
+    &, .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .phone {
+        height: 593px;
+        width: 286px;
+        background: url('../img/phone.png');
+        padding: 258px 36px;
+        text-align: center;
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 30px 0;
+            font-weight: 200;
+
+            b {
+                font-weight: 400;
+            }
+        }
+
+        .buttons {
+            margin: 0 (@grid-gutter-width / 2);
+        }
+
+        .btn-block {
+            margin-bottom: @grid-gutter-width / 4;
+        }
+    }
+
+    .text {
+        padding-left: @grid-gutter-width;
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            font-size: 3.5em;
+            marign: 0;
+        }
+
+        p {
+            margin: (@grid-gutter-width / 2) 0;
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .btn {
+            margin-right: @grid-gutter-width / 2;
+        }
+    }
+}
+
+.btn {
+    text-transform: uppercase;;
+    font-weight: 600;
+    border-width: 2px;
+    transform: scale(1);
+    transition: 0.3s transform;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.btn-filled {
+    .button-variant(@brand-primary, #fff, transparent);
+}
+
+.btn-outline {
+    .button-variant(#fff, transparent, #fff);
+}

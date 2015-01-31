@@ -15,9 +15,9 @@ module.exports = {
         saveUninitialized: false
     },
     apn: {
-        cert: __dirname + '/BioMessageCert.pem',
-        key: __dirname + '/BioMessageKey.pem',
-        gateway:'gateway.sandbox.push.apple.com',
-        passphrase: 'biomessage'
+        cert: __dirname + '/BioAuthCert.pem',
+        key: __dirname + '/BioAuthKey.pem',
+        gateway: 'gateway.sandbox.push.apple.com',
+        passphrase: 'bioauth'
     }
 };

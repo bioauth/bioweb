@@ -1,0 +1,17 @@
+extends ../layout
+block body
+    body
+        .center-box
+            .logo
+            .boxed
+                form(action='/user/login',method='post')
+                    .form-group
+                        label(for='username') Username:
+                        input.form-control(id='username', type='text', value='', name='username', placeholder='Username')
+                    .form-group
+                        label(for='password') Password:
+                        input.form-control(id='password', type='password', value='', name='password', placeholder='Password')
+
+                    input(id='clientId', type='hidden',value='#{clientId}', name='clientId')
+                    input(id='redirectUri', type='hidden',value='#{redirectUri}', name='redirectUri')
+                    input.btn.btn-primary(type='submit',value='Login')

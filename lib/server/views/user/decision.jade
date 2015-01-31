@@ -1,0 +1,13 @@
+extends ../layout
+block body
+    body
+        .center-box.decision
+            .logo
+            .boxed
+                p.larger Hi #{user.get('username')}. #[b #{client.get('name')}] is requesting access to your account.
+                p It will be able to view authorization requests and update your device preferences.
+            form(action='/user/decision', method='post')
+                input(name='transaction_id', type='hidden', value='#{transactionID}')
+                .buttons
+                    input.btn.btn-block.btn-filled(type='submit', value='Allow', id='allow')
+                    input.btn.btn-block.btn-outline(type='submit', value='Deny', name='cancel', id='deny')

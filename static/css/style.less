@@ -110,6 +110,21 @@ body {
     }
 }
 
+.decision {
+    width: 350px;
+
+    p.larger {
+        font-size: 1.3em;
+    }
+
+    .buttons {
+
+        &, .btn-block + .btn-block {
+            margin-top: @grid-gutter-width / 2;
+        }
+    }
+}
+
 .btn-filled, .btn-outline {
     text-transform: uppercase;;
     font-weight: 600;

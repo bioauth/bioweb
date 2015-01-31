@@ -16,13 +16,19 @@ gulp.task('js', function () {
         .pipe($.browserify({
             insertGlobals: true,
             debug: true,
-            nobuiltins: 'querystring'
+            nobuiltins: 'querystring',
+            shim: {
+                'angular': {
+                    exports: 'angular',
+                    path: 'bower_components/angular/angular.js'
+                }
+            }
         }))
         .pipe(gulp.dest(dest + 'js'));
 });
 
 gulp.task('everythingElse', function () {
-    gulp.src(src + '**/*.png').pipe(gulp.dest(dest));
+    gulp.src(src + '**/*.{png,svg,html,eot,ttf,woff}').pipe(gulp.dest(dest));
 });
 
 gulp.task('default', ['css', 'js', 'everythingElse']);

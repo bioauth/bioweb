@@ -1,21 +1,22 @@
 @import "bootstrap";
+@import "icomoon";
 
 html{
     height: 100%;
 }
 
 body {
-    min-height: 100%;
-}
-
-.landing {
     background: url('../img/background.png');
+    min-height: 100%;
 
-    &, .content {
+    &, > .content {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+}
+
+.landing {
 
     .phone {
         height: 593px;
@@ -67,7 +68,49 @@ body {
     }
 }
 
-.btn {
+.center-box {
+    min-width: 350px;
+
+    .logo {
+        background: url('../img/logo-wide.png') center center no-repeat;
+        background-size: contain;
+        height: 50px;
+        margin-bottom: @grid-gutter-width / 1.5;
+    }
+
+    .boxed {
+        background: #fff;
+        padding: @grid-gutter-width / 2;
+        border-radius: 3px;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+}
+
+.yay {
+    text-align: center;
+    width: 500px;
+    padding-bottom: @grid-gutter-width / 2;
+
+    h2 {
+        .icon {
+            color: @brand-primary;
+            display: inline-block;
+            margin-right: 0.5em;
+            font-size: 0.8em;
+        }
+    }
+
+    p {
+        font-size: 1.2em;
+        margin: @grid-gutter-width 10%;
+    }
+
+    .app-downloads svg {
+        height: 40px;
+    }
+}
+
+.btn-filled, .btn-outline {
     text-transform: uppercase;;
     font-weight: 600;
     border-width: 2px;
@@ -85,4 +128,16 @@ body {
 
 .btn-outline {
     .button-variant(#fff, transparent, #fff);
+}
+
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    color: #999;
+
+    &:focus {
+        box-shadow: none;
+        border-color: @brand-primary;
+        color: darken(@brand-primary, 15%);
+    }
 }

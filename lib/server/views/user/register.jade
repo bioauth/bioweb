@@ -1,0 +1,19 @@
+extends ../layout
+block body
+    body(ng-app='bio')
+        .center-box
+            .logo
+            .boxed(ng-controller='register as register')
+                div(ng-if="register.alert", class="alert alert-{{ register.alert[0] }}") {{ register.alert[1] }}
+                form(ng-submit="register.run()")
+                    .form-group
+                        label Username
+                        input.form-control(ng-model='register.user.username', type='text', placeholder='JohnDoe')
+                    .form-group
+                        label Email Address
+                        input.form-control(ng-model='register.user.email', type='email', placeholder='john@example.com')
+                    .form-group
+                        label Password
+                        input.form-control(ng-model='register.user.password', type='password')
+
+                    input.btn.btn-primary(type='submit', value='Sign Up', ng-disabled="{{ register.disabled }}")

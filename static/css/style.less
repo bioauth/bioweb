@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "icomoon";
+@import "loading";
 
 html{
     height: 100%;
@@ -77,13 +78,13 @@ body {
         height: 50px;
         margin-bottom: @grid-gutter-width / 1.5;
     }
+}
 
-    .boxed {
-        background: #fff;
-        padding: @grid-gutter-width / 2;
-        border-radius: 3px;
-        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
-    }
+.boxed {
+    background: #fff;
+    padding: @grid-gutter-width / 2;
+    border-radius: 3px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 .yay {
@@ -113,16 +114,16 @@ body {
 .decision {
     width: 350px;
 
-    p.larger {
-        font-size: 1.3em;
-    }
-
     .buttons {
 
         &, .btn-block + .btn-block {
             margin-top: @grid-gutter-width / 2;
         }
     }
+}
+
+p.larger {
+    font-size: 1.3em;
 }
 
 .btn-filled, .btn-outline {

@@ -1,0 +1,21 @@
+extends ../layout
+block body
+    body(ng-app="bio")
+        .center-box.land(ng-controller="land as land")
+            .logo
+            .boxed.text-center(style='max-width: 400px;')
+                h2 Almost there!
+
+                div(ng-if="land.alert", class="alert alert-{{ land.alert[0] }}") {{ land.alert[1] }}
+                .spinner(ng-if="!land.alert")
+                    .bounce1
+                    .bounce2
+                    .bounce3
+
+                p.larger Connect your Nymi to your phone to complete authentication.
+                br
+                p We use your biometric fingerprint to ensure no one else can access your account!
+
+    script.
+        window.token = "#{token}";
+        window.redirect = "#{redirect}";

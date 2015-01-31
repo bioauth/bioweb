@@ -16,7 +16,6 @@ gulp.task('js', function () {
         .pipe($.browserify({
             insertGlobals: true,
             debug: true,
-            nobuiltins: 'querystring',
             shim: {
                 'angular': {
                     exports: 'angular',

@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
             table.string('email');
             table.string('password');
             table.string('device');
+            table.binary('private_key');
             table.timestamps();
         }),
 

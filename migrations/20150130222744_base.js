@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
             table.string('email');
             table.string('password');
             table.string('device');
-            table.binary('private_key');
+            table.binary('public_key');
         }),
 
         knex.schema.createTable('client', function (table) {
@@ -22,15 +22,16 @@ exports.up = function(knex, Promise) {
         }),
 
         knex.schema.createTable('external_access_token', function (table) {
-            table.string('id').primary();
+            table.increments();
             table.dateTime('expiration');
             table.string('token').index();
             table.integer('user').index();
+            table.string('status');
             table.dateTime('created_at');
         }),
 
         knex.schema.createTable('access_token', function (table) {
-            table.string('id').primary();
+            table.increments();
             table.dateTime('expiration');
             table.string('token').index();
             table.integer('user').index();

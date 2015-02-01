@@ -10,7 +10,7 @@ function Register ($http) {
         $http.get('/external/' + query.token)
             .success(function (data) {
                 if (data.status !== 'pending') {
-                    window.location = query.redirectUri;
+                    window.location = query.redirectUri + '?token=' + query.token;
                 } else {
                     setTimeout(run, 1000);
                 }

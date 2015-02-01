@@ -27,6 +27,7 @@ exports.up = function(knex, Promise) {
             table.string('token').index();
             table.integer('user').index();
             table.string('status');
+            table.string('name');
             table.string('location');
             table.dateTime('created_at');
         }),

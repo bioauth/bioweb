@@ -19,5 +19,7 @@ module.exports = {
         key: __dirname + '/BioAuthKey.pem',
         gateway: 'gateway.sandbox.push.apple.com',
         passphrase: 'bioauth'
+    },
+    mashape: {
     }
 };

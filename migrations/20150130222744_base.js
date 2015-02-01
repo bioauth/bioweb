@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
             table.string('email');
             table.string('password');
             table.string('device');
-            table.binary('public_key');
+            table.string('public_key');
         }),
 
         knex.schema.createTable('client', function (table) {
